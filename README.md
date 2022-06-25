@@ -1,6 +1,4 @@
 # boilerplate python notebooks template
-Boilerplate template for generic data analysis using python and jupyter notebooks.
-
 This repo should contain all documentation, scripts and data to recreate the final figure/analysis from the source data. Final analysis and plotting is done in Jupyter notebooks with a python kernel for interactive analysis of the source or preprocessed data and inline documentation. 
 
 ## purpose
