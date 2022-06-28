@@ -13,24 +13,14 @@
 #     name: python3
 # ---
 
-# + [markdown] colab_type="text" id="view-in-github"
-# <a href="https://colab.research.google.com/github/sebsteinig/analysis_mcglannan_2022/blob/master/notebook_mcglannan_2022_devono_mississippian_winds.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+# + [markdown] colab_type="text" id="view-in-github" tags=[]
+# <a href="https://colab.research.google.com/github/sebsteinig/analysis_template/blob/main/notebook_template.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 # -
 
 # # Title
 # short description of what the notebook does
 
-# # User input
-# define variables/lists to quickly change inputs to the notebook
-
-# +
-work_dir       = repo + '/'
-expts          = ['teXpz', 'teXpy']
-
-save_figures   = True
-# -
-
-# ## Prelude
+# ## Prelude (only necesseary when running on Google Colab)
 # If running on Google Colab, execute the following two cells seperately to download the files and install the necessary conda environment on the virtual machine. This will take several minutes and involves restarting the kernel.
 #
 # If running somewhere else, you can execute the whole notebooks and this part will be skipped automatically.
@@ -61,10 +51,21 @@ try:
     import google.colab
     
     # install packages from environment.yml file
+    # %cd repo
     # !conda env update -n base -f environment.yml
     
 except:
     print('not running on Google Colab')
+# -
+
+# # User input
+# define variables/lists to quickly change inputs to the notebook
+
+# +
+work_dir       = repo + '/'
+expts          = ['teXpz', 'teXpy']
+
+save_figures   = True
 # -
 
 # # Load packages
