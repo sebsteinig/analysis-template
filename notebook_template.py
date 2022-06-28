@@ -37,6 +37,8 @@ try:
     # clone repo if it does not already exist
     if not os.path.exists(repo):
         # !git clone https://github.com/sebsteinig/{repo}.git
+        
+    # %cd /content/repo
 
     # install condacolab to easily handle conda environments on Colab
     # !pip install -q condacolab
