@@ -1,6 +1,7 @@
 name: base
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - python==3.7
   - pip
@@ -15,4 +16,4 @@ dependencies:
   - pandas
   - seaborn
   - flask
-prefix: /usr/local
+  - jupytext
