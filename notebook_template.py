@@ -25,7 +25,7 @@
 
 # +
 work_dir       = repo + '/'
-expts          = ['teXpz', 'teXpy', 'abc', 'def']
+expts          = ['teXpz', 'teXpy']
 
 save_figures   = True
 # -
@@ -271,5 +271,5 @@ for expCount, exp in enumerate(expts):
         
 
 fig.tight_layout()
-#plt.savefig(work_dir + 'Devono-Mississippian-winds-NA_main.pdf', dpi=200)  
+plt.savefig(work_dir + 'Devono-Mississippian-winds-NA_main.pdf', dpi=200)  
 
