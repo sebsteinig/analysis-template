@@ -38,7 +38,7 @@ try:
     if not os.path.exists(repo):
         # !git clone https://github.com/sebsteinig/{repo}.git
         
-    # %cd /content/repo
+    # %cd /content/{repo}
 
     # install condacolab to easily handle conda environments on Colab
     # !pip install -q condacolab
@@ -53,65 +53,74 @@ try:
     import google.colab
     
     # install packages from environment.yml file
-    # %cd repo
     # !conda env update -n base -f environment.yml
     
 except:
     print('not running on Google Colab')
 # -
 
-# # User input
+# ## User input
 # define variables/lists to quickly change inputs to the notebook
 
 # +
-work_dir       = repo + '/'
-expts          = ['teXpz', 'teXpy']
+work_dir       = '.' # location of cloned repository
+exp_list       = ['exp1', 'exp2'] # list of data sets to loop over
 
-save_figures   = True
+save_figures   = True # flag whether to save figures to disk or not
 # -
 
-# # Load packages
+# ## Load packages
 
 # + colab={"base_uri": "https://localhost:8080/"} id="WcMt0hmK_38Q" outputId="1ca62e3a-a818-48f8-aea4-d2827f558cdb"
 # load packages
-import numpy as np
+
+### some standard packages
 import matplotlib.pyplot as plt
-import csv
+import numpy as np
 import xarray as xr
 
-import warnings
-warnings.filterwarnings('ignore')
+### some optional packages that I always have to google ...
 
-from cartopy import config
-import cartopy.crs as ccrs
-from cartopy.util import add_cyclic_point
-import cartopy.feature as cfeature
-import cartopy.io.shapereader as shpreader
+#### cartopy maps
+#from cartopy import config
+#import cartopy.crs as ccrs
+#from cartopy.util import add_cyclic_point
 
-import cmocean
-import shapefile as shp  # Requires the pyshp package
-from shapely.geometry.polygon import Polygon
+#### colormaps
+#import cmocean
+
+#### csv parser
+#import csv
+
+#### suppress warnings
+#import warnings
+#warnings.filterwarnings('ignore')
 
 # -
 
 # # Main code
 
-# + [markdown] id="b4335f25"
-# # winds, orography and precipitation
-
 # + colab={"base_uri": "https://localhost:8080/", "height": 713} id="055047f3" outputId="8b79a52d-0d53-4631-91b9-e4fb17cfc984"
-# loop over all models
-# define figure layout first
-
-expts          = ['teXpq', 'teXpr', 'teXpu']
-labels         = ['339Ma', '344Ma', '359Ma']
-panels         = ['(a)', '(b)', '(c)','(d)', '(e)', '(f)']
-
-fig, axes = plt.subplots(len(expts), 2, figsize=(11, 12) )
+# some code snippets I regularly use
     
-plotRow = 0
-    
-for expCount, exp in enumerate(expts):
+#### loop analysis over data sets   
+# for expCount, exp in enumerate(exp_list):
+
+#### load netcdf data set
+# ds = xr.open_dataset(work_dir + '/data/file_name.nc')
+
+#### new multi-panel figure
+# fig, axes = plt.subplots(nrows, ncols, figsize=(width, height) ) # figsize in inches
+
+#### map plot with cartopy
+# ax = fig.add_subplot(nrows, ncols, index, projection=ccrs.Robinson()) # or e.g. ccrs.PlateCarree()
+# ax.set_extent([minlon,maxlon, minlat,maxlat], ccrs.PlateCarree()) # or ax.set_global()
+# ax.coastlines()
+# ax.contourf(ds['variable_name'], transform=ccrs.PlateCarree(), levels=21, 
+#             vmin=..., vmax=..., cmap=cmocean.cm.topo, add_colorbar=False)
+
+# add cyclic longitude to field and coordinate (from cartopy.util import add_cyclic_point)
+# variable_cyclic, longitude_cyclic = add_cyclic_point(variable, coord=longitude)
 
     # load data
     modelHeight = xr.open_dataset(data_dir + exp + '.modelHeight.nc', decode_times=False).modelHeight 
