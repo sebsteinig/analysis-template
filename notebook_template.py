@@ -36,6 +36,7 @@ try:
 
     # clone repo if it does not already exist
     if not os.path.exists(repo):
+        print('cloning GitHub repository: ' + repo)
         # !git clone https://github.com/sebsteinig/{repo}.git
         
     # %cd /content/{repo}
