@@ -72,8 +72,6 @@ save_figures   = True # flag whether to save figures to disk or not
 # ## Load packages
 
 # + colab={"base_uri": "https://localhost:8080/"} id="WcMt0hmK_38Q" outputId="1ca62e3a-a818-48f8-aea4-d2827f558cdb"
-# load packages
-
 ### some standard packages
 import matplotlib.pyplot as plt
 import numpy as np
