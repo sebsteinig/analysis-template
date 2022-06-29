@@ -30,9 +30,13 @@ using the `environment.yml` file from this repository to install all necessary p
 jupyter lab
 ```
 
-or directly from the command line with
+We further use the [jupytext](https://jupytext.readthedocs.io/en/latest/index.html) package to automatically save a pure python script (*.py) each time the notebook is saved. This very helpful for clean diffs in the version control and allows you to run the analysis in your local terminal with:
 
 ```
-jupyter nbconvert --to notebook --inplace --execute notebook_name.ipynb
+python notebook_name.py
+```
+The python file can also be shared with others to work on the code together using all the version control benefits (branches, pull requests, ...). It can also be converted back to jupyter notebook (with no output) via
+```
+jupytext --to notebook notebook_name.py
 ```
 
