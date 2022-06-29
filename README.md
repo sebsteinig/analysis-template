@@ -30,12 +30,12 @@ using the `environment.yml` file from this repository to install all necessary p
 jupyter lab
 ```
 
-We further use the [jupytext](https://jupytext.readthedocs.io/en/latest/index.html) package to automatically save a pure python script (*.py) each time the notebook is saved. This very helpful for clean diffs in the version control and allows you to run the analysis in your local terminal with:
+We further use the [jupytext](https://jupytext.readthedocs.io/en/latest/index.html) package to automatically save a pure python script (*.py) each time the notebook is saved. This is very helpful for clean diffs in the version control and allows you to run the analysis in your local terminal with:
 
 ```
 python notebook_name.py
 ```
-The python file can also be shared with others to work on the code together using all the version control benefits (branches, pull requests, ...). It can also be converted back to jupyter notebook (with no output) via
+The python file can also be shared with others to work on the code together using all the version control benefits (branches, pull requests, ...). You can edit it with any tex editor/IDE and it can also be converted back to a jupyter notebook (with no output) via
 ```
 jupytext --to notebook notebook_name.py
 ```
