@@ -1,5 +1,5 @@
 # boilerplate python notebook template
-This repo should contain all documentation, scripts and data to recreate the final figure/analysis from the source data. Final analysis and plotting is done in Jupyter notebooks with a python kernel for interactive analysis of the source or preprocessed data and inline documentation. 
+This repo should contain all documentation, scripts and data to recreate the final figure/analysis from the source data. Final analysis and plotting is done in jupyter notebooks with a python kernel for interactive analysis of the source or preprocessed data and inline documentation. 
 
 ## purpose
 What do I want to do?
