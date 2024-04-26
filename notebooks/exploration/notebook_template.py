@@ -6,65 +6,24 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.13.8
+#       jupytext_version: 1.16.1
 #   kernelspec:
 #     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
 
-# + [markdown] colab_type="text" id="view-in-github" tags=[]
-# <a href="https://colab.research.google.com/github/sebsteinig/analysis_template/blob/main/notebook_template.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-# -
-
 # # Title
 # short description of what the notebook does
-
-# ## Prelude (only necesseary when running on Google Colab)
-# If running on Google Colab, execute the following two cells seperately to download the files and install the necessary conda environment on the virtual machine. This will take several minutes and involves restarting the kernel.
-#
-# If running somewhere else, you can execute the whole notebooks and this part will be skipped automatically.
-
-# +
-# configure environment on Colab
-try:
-    import google.colab
-
-    # if on Colab, clone the repository to access the data locally
-    import os
-    repo = "analysis_template"
-
-    # clone repo if it does not already exist
-    if not os.path.exists(repo):
-        print('cloning GitHub repository: ' + repo)
-        # !git clone https://github.com/sebsteinig/{repo}.git
-        
-    # %cd /content/{repo}
-
-    # install condacolab to easily handle conda environments on Colab
-    # !pip install -q condacolab
-    import condacolab
-    condacolab.install()
-    
-except:
-    print('not running on Google Colab')
-
-# + colab={"base_uri": "https://localhost:8080/"} id="DmiZzoIu_5lO" outputId="46885ef8-d49b-49ad-a1d7-844393356d5b"
-try:
-    import google.colab
-    
-    # install packages from environment.yml file
-    # !conda env update -n base -f environment.yml
-    
-except:
-    print('not running on Google Colab')
-# -
 
 # ## User input
 # define variables/lists to quickly change inputs to the notebook
 
 # +
 work_dir       = '.' # location of cloned repository
+data_dir       = work_dir + '/data' # location of data files
+fig_dir        = work_dir + '/figures' # location of figure files
+
 exp_list       = ['exp1', 'exp2'] # list of data sets to loop over
 
 save_figures   = True # flag whether to save figures to disk or not
@@ -91,9 +50,6 @@ import xarray as xr
 #### csv parser
 #import csv
 
-#### suppress warnings
-#import warnings
-#warnings.filterwarnings('ignore')
 
 # -
 
@@ -107,7 +63,7 @@ import xarray as xr
 
 # #### appendix: some code snippets I regularly use
 
-# + colab={"base_uri": "https://localhost:8080/", "height": 713} id="055047f3" outputId="8b79a52d-0d53-4631-91b9-e4fb17cfc984" tags=[]
+# + colab={"base_uri": "https://localhost:8080/", "height": 713} id="055047f3" outputId="8b79a52d-0d53-4631-91b9-e4fb17cfc984"
 #### loop analysis over data sets   
 # for expCount, exp in enumerate(exp_list):
 

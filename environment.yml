@@ -1,19 +1,13 @@
-name: base
 channels:
-  - defaults
   - conda-forge
 dependencies:
-  - python==3.7
+  - python==3.10
   - pip
   - conda
-  - mamba
-  - cartopy=0.18.0
+  - cartopy=0.23.0
   - cmocean
   - numpy
   - xarray
-  - pyyaml==5.4.1
   - jupyterlab
   - pandas
-  - seaborn
-  - flask
   - jupytext
