@@ -8,6 +8,7 @@ dependencies:
   - cmocean
   - numpy
   - xarray
+  - netcdf4
   - jupyterlab
   - pandas
   - jupytext
